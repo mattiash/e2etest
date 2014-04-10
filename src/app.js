@@ -1,6 +1,6 @@
 "use strict";
-angular.module("myApp", [])
-    .service("counterService", function() {
+angular.module("myApp", ["ng"])
+    .factory("counterService", function() {
         var counterService = {};
         var counter = 1;
         counterService.increase = function() {
@@ -10,6 +10,7 @@ angular.module("myApp", [])
             return counter;
         };
 
+        window.counterService = counterService;
         return counterService;
     })
 
